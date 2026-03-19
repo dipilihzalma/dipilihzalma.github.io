@@ -46,16 +46,17 @@ const OpeningScreen = ({ onOpen }) => {
 
     if (!imagesLoaded) {
         return (
-            <div style={{
-                position: 'fixed',
-                top: 0, left: 0, width: '100%', height: '100vh',
-                display: 'flex', justifyContent: 'center', alignItems: 'center',
-                backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(${getPreloadedImage(ASSETS.bg)})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center bottom',
-                backgroundAttachment: 'fixed',
-                zIndex: 999
-            }}>
+            <motion.div 
+                key="loading"
+                exit={{ opacity: 0 }}
+                style={{
+                    position: 'fixed',
+                    top: 0, left: 0, width: '100%', height: '100vh',
+                    display: 'flex', justifyContent: 'center', alignItems: 'center',
+                    backgroundColor: '#FAF8F5',
+                    zIndex: 999
+                }}
+            >
                 { /* Simple loading indicator */}
                 <motion.div
                     animate={{ rotate: 360 }}
@@ -67,7 +68,7 @@ const OpeningScreen = ({ onOpen }) => {
                         borderRadius: '50%'
                     }}
                 />
-            </div>
+            </motion.div>
         );
     }
 
