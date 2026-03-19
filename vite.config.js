@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig(({ command }) => {
   return {
     plugins: [react()],
-    // Use the repository name for GitHub Pages in production, otherwise use the root path for local dev
+    // Use the root path for GitHub Pages as we're deploying to the domain root (dipilihzalma.github.io)
     base: '/',
   }
 })
